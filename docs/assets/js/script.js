@@ -47,3 +47,15 @@ particlesJS('particles-js', {
         "move": { "enable": true, "speed": 2 }
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach((accordion) => {
+    accordion.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.classList.toggle("active");
+    });
+  });
+});

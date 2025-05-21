@@ -1,14 +1,10 @@
+/* CSS RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
-
-/* body {
-    background-color: #1E1E1E;
-    color: #FFFFFF;
-} */
 
 body {
     color: #FFFFFF;
@@ -18,11 +14,9 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: #1E1E1E; /* Fundo preto para contraste */
+    background: #1E1E1E;
 }
 
-
-/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -52,9 +46,8 @@ body {
     opacity: 0.7;
 }
 
-/* Home Section */
 .home {
-    position: relative; 
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -109,7 +102,6 @@ body {
     transform: translateY(-5px);
 }
 
-/* Formação Section */
 .formacao, .projetos {
     padding: 4rem 2rem;
     text-align: center;
@@ -122,6 +114,48 @@ body {
     font-weight: 700;
 }
 
+.projetos h2, .projetos h3 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Accordion Dropdown Style */
+.accordion {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: center; /* Alinha o texto dentro do botão */
+}
+
+.accordion:hover,
+.accordion.active {
+    background-color: #444;
+}
+
+.panel {
+    padding: 0 1rem;
+    display: none;
+    overflow: hidden;
+    text-align: left;
+}
+
+.panel.active {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
 .cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -131,101 +165,78 @@ body {
     margin: 0 auto;
 }
 
-/* Card de Formação - Maior largura */
-.education-card {
-    background-color: #2A2A2A;
-    border-radius: 10px;
-    padding: 1.5rem;
-    width: 450px; /* Aumentado conforme solicitado */
-    transition: transform 0.3s ease;
-}
-
-.education-card:hover {
-    transform: translateY(-10px);
-}
-
-.education-card img {
-    width: 400px; /* Largura fixa */
-    height: 250px; /* Altura fixa */
-    object-fit: cover; /* Mantém proporção da imagem */
-    margin-bottom: 1rem;
-}
-
-.education-card h3 {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.education-card .course {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.education-card .date {
-    color: #888;
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
-}
-
-.education-card .description {
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-/* Projetos Section - Mantida a largura original */
+.education-card,
 .project-card {
     background-color: #2A2A2A;
     border-radius: 10px;
     padding: 1.5rem;
-    width: 350px;
-    text-decoration: none;
-    color: #FFFFFF;
     transition: transform 0.3s ease;
-    display: block;
 }
 
+.education-card {
+    width: 450px;
+}
+
+.education-card:hover,
 .project-card:hover {
     transform: translateY(-10px);
 }
 
-.project-card img {
-    width: 300px; /* Largura fixa */
-    height: 175px; /* Altura fixa */
-    object-fit: cover; /* Mantém proporção da imagem */
+.education-card img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
     margin-bottom: 1rem;
 }
 
+.education-card h3,
 .project-card h3 {
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
+.education-card .course,
 .project-card .semester {
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
 
+.education-card .date,
 .project-card .date {
     color: #888;
     font-size: 0.8rem;
     margin-bottom: 1rem;
 }
 
+.education-card .description,
 .project-card .description {
     font-size: 0.9rem;
     line-height: 1.4;
+    text-align: center; /* Centraliza o texto do parágrafo */
 }
 
-/* Footer */
+.project-card {
+    width: 350px;
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+}
+
+.project-card img {
+    width: 300px;
+    height: 175px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
 footer {
-    position: relative; 
+    position: relative;
     text-align: center;
     padding: 2rem;
     background-color: #1E1E1E;
     font-size: 0.9rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -262,23 +273,15 @@ footer {
         font-size: 1rem;
     }
 
-    .education-card {
-        width: 100%;
-        max-width: 450px; /* Mantém a largura máxima mesmo em telas menores */
-    }
-
-    .education-card img {
-        width: 100%; /* Largura fixa */
-        height: 250px; /* Altura fixa */
-    }
-
+    .education-card,
     .project-card {
         width: 100%;
-        max-width: 350px; /* Mantém a largura máxima mesmo em telas menores */
+        max-width: 450px;
     }
 
+    .education-card img,
     .project-card img {
-        width: 100%; /* Largura fixa */
-        height: 175px; /* Altura fixa */
+        width: 100%;
+        height: auto;
     }
 }
