@@ -1,3 +1,4 @@
+/* CSS RESET */
 * {
     margin: 0;
     padding: 0;
@@ -120,6 +121,12 @@ body {
     font-size: 2rem;
     margin-bottom: 3rem;
     font-weight: 700;
+}
+
+/* Espaçamento adicional para títulos dentro da seção Projetos */
+.projetos h2, .projetos h3 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .cards-container {
